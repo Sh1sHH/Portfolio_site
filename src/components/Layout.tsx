@@ -100,7 +100,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="s-header__block">
             <div className="s-header__logo">
               <a className="logo" href="index.html">
-                <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="Homepage" />
+               {/* <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="Homepage" />   Header logo.  */}
               </a>
             </div>
             <a 
