@@ -54,13 +54,11 @@ const Home: React.FC = () => {
 
         {/* Intro Media */}
         <div className="s-intro__content-media">
-          <img src={`${process.env.PUBLIC_URL}/images/pp.png`} 
-               srcSet={`${process.env.PUBLIC_URL}/images/pp.png 1x, ${process.env.PUBLIC_URL}/images/pp.png 2x`} 
+          <img src={`${process.env.PUBLIC_URL}/images/pp2.jpeg`} 
+               srcSet={`${process.env.PUBLIC_URL}/images/pp2.jpeg 1x, ${process.env.PUBLIC_URL}/images/pp2.jpeg 2x`} 
                alt="Profile" 
                style={{
-                 maxWidth: '100%',
-                 height: 'auto',
-                 boxShadow: '0 4px 170px rgb(255, 0, 0)'
+                 boxShadow: '0 4px 170px rgb(255, 0, 0)',
                }}
           />
         </div>
