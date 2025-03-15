@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
 import GLightbox from 'glightbox';
-// @ts-ignore
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import usePreloader from '../hooks/usePreloader.ts';
 import useHeader from '../hooks/useHeader.ts';
 import useMobileMenu from '../hooks/useMobileMenu.ts';
@@ -74,45 +70,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return () => {
       if (lightbox) {
         lightbox.destroy();
-      }
-    };
-  }, []);
-
-  // Initialize Swiper
-  useEffect(() => {
-    // @ts-ignore - Swiper tiplerini görmezden geliyoruz
-    const testimonialsSwiper = new Swiper('.s-testimonials__slider', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        401: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
-        801: {
-          slidesPerView: 2,
-          spaceBetween: 30
-        },
-        1181: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        }
-      }
-    });
-
-    return () => {
-      if (testimonialsSwiper) {
-        // @ts-ignore
-        testimonialsSwiper.destroy();
       }
     };
   }, []);

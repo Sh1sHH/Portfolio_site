@@ -19,6 +19,18 @@ html[data-current-section="about"] {
   scroll-padding-top: 100px;
 }
 
+/* Section header sayılarının rengini değiştir */
+.section-header::before {
+  color: #ff0000 !important; /* Kırmızı renk */
+  opacity: 0.7; /* Opaklığı biraz artırdım */
+}
+
+/* Koyu arka plan üzerindeki section header sayılarının rengini değiştir */
+.section-header.light-on-dark::before {
+  color: #ff0000 !important; /* Kırmızı renk */
+  opacity: 0.5; /* Koyu arka plan için daha düşük opaklık */
+}
+
 /* Daha akıcı animasyonlar için */
 * {
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;

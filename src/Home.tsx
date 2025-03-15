@@ -237,113 +237,6 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="row s-testimonials">
-          <div className="column xl-12">
-            <h3 className="s-testimonials__header">Hear it from My Happy Clients</h3>
-            <div className="swiper-container s-testimonials__slider">
-              <div className="swiper-wrapper">
-                {/* Testimonial slides */}
-                <div className="swiper-slide s-testimonials__slide" style={{ 
-                  padding: '3rem 2rem',
-                  backgroundColor: '#f5f5f5',
-                  borderRadius: '4px',
-                  margin: '0 1rem'
-                }}>
-                  <div className="s-testimonials__author">
-                    <img src={`${process.env.PUBLIC_URL}/images/avatars/user-01.jpg`} alt="Author" className="s-testimonials__avatar" style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      marginRight: '1rem'
-                    }} />
-                    <cite className="s-testimonials__cite">
-                      <strong>John Rockefeller</strong>
-                      <span>CEO, Standard Oil.</span>
-                    </cite>
-                  </div>
-                  <p>
-                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                    Laudantium quia consequatur molestias.
-                  </p>
-                </div>
-                <div className="swiper-slide s-testimonials__slide" style={{ 
-                  padding: '3rem 2rem',
-                  backgroundColor: '#f5f5f5',
-                  borderRadius: '4px',
-                  margin: '0 1rem'
-                }}>
-                  <div className="s-testimonials__author">
-                    <img src={`${process.env.PUBLIC_URL}/images/avatars/user-02.jpg`} alt="Author" className="s-testimonials__avatar" style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      marginRight: '1rem'
-                    }} />
-                    <cite className="s-testimonials__cite">
-                      <strong>Satya Nadella</strong>
-                      <span>CEO, Microsoft.</span>
-                    </cite>
-                  </div>
-                  <p>
-                    Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                    Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                    Quasi voluptas eius distinctio. Atque eos maxime.
-                  </p>
-                </div>
-                <div className="swiper-slide s-testimonials__slide" style={{ 
-                  padding: '3rem 2rem',
-                  backgroundColor: '#f5f5f5',
-                  borderRadius: '4px',
-                  margin: '0 1rem'
-                }}>
-                  <div className="s-testimonials__author">
-                    <img src={`${process.env.PUBLIC_URL}/images/avatars/user-03.jpg`} alt="Author" className="s-testimonials__avatar" style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      marginRight: '1rem'
-                    }} />
-                    <cite className="s-testimonials__cite">
-                      <strong>Jeff Bezos</strong>
-                      <span>CEO, Amazon.</span>
-                    </cite>
-                  </div>
-                  <p>
-                    Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                    Voluptatem dignissimos ut.
-                  </p>
-                </div>
-                <div className="swiper-slide s-testimonials__slide" style={{ 
-                  padding: '3rem 2rem',
-                  backgroundColor: '#f5f5f5',
-                  borderRadius: '4px',
-                  margin: '0 1rem'
-                }}>
-                  <div className="s-testimonials__author">
-                    <img src={`${process.env.PUBLIC_URL}/images/avatars/user-04.jpg`} alt="Author" className="s-testimonials__avatar" style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '50%',
-                      marginRight: '1rem'
-                    }} />
-                    <cite className="s-testimonials__cite">
-                      <strong>Tim Cook</strong>
-                      <span>CEO, Apple.</span>
-                    </cite>
-                  </div>
-                  <p>
-                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                    quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
-                    Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                  </p>
-                </div>
-              </div>
-              <div className="swiper-pagination" />
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Footer section */}
@@ -384,11 +277,8 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="row s-footer__buttons">
-          <div className="column xl-6 tab-12">
-            <a href="mailto:#0" className="btn btn--primary btn--large u-fullwidth">Message Me</a>
-          </div>
-          <div className="column xl-6 tab-12">                    
-            <a href="#0" className="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
+          <div className="column xl-12 tab-12" style={{ display: 'flex', justifyContent: 'center' }}>                    
+            <a href="#0" className="btn btn--stroke btn--large" style={{ maxWidth: '400px', width: '100%' }}>Get My CV</a>
           </div>
         </div>
         <div className="row s-footer__bottom">
