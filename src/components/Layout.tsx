@@ -9,6 +9,8 @@ import useHeader from '../hooks/useHeader.ts';
 import useMobileMenu from '../hooks/useMobileMenu.ts';
 import useScrollSpy from '../hooks/useScrollSpy.ts';
 import useBackToTop from '../hooks/useBackToTop.ts';
+import useMoveTo from '../hooks/useMoveTo.ts';
+import useSmoothScroll from '../hooks/useSmoothScroll.ts';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +23,38 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMobileMenu();
   const activeSection = useScrollSpy();
   const { isVisible: isBackToTopVisible, scrollToTop } = useBackToTop();
+  
+  // Her iki smooth scroll hook'unu da başlat
+  // useMoveTo tarayıcı desteklemezse useSmoothScroll fallback olarak çalışacak
+  useMoveTo();
+  useSmoothScroll();
+  
+  // Smooth scroll için ek bir useEffect
+  useEffect(() => {
+    // Sayfa yüklendiğinde URL'de hash varsa, o bölüme smooth scroll yap
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        setTimeout(() => {
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 500); // Sayfa tamamen yüklendikten sonra scroll yapmak için biraz bekle
+      }
+    }
+  }, []);
+  
+  // Aktif bölüme göre HTML'e data-current-section özelliği ekle
+  useEffect(() => {
+    if (activeSection) {
+      document.documentElement.setAttribute('data-current-section', activeSection);
+    }
+  }, [activeSection]);
 
   // Initialize GLightbox
   useEffect(() => {

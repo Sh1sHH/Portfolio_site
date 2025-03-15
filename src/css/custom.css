@@ -1,5 +1,29 @@
 /* Custom CSS for Portfolio Section */
 
+/* Smooth Scroll için eklenen CSS */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Header yüksekliği için padding değerini artırdım */
+}
+
+/* Özel scroll padding değerleri */
+html[data-current-section="footer"] {
+  scroll-padding-top: 20px;
+}
+
+html[data-current-section="works"] {
+  scroll-padding-top: 80px;
+}
+
+html[data-current-section="about"] {
+  scroll-padding-top: 100px;
+}
+
+/* Daha akıcı animasyonlar için */
+* {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;
+}
+
 .folio-entries {
   margin-top: 2rem;
   margin-left: 0;
