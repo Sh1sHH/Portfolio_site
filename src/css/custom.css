@@ -198,6 +198,10 @@ html[data-current-section="about"] {
   .s-works .column.xl-6.lg-6.md-6 {
     width: 100%;
   }
+  
+  .s-intro__content-pretitle {
+    color: #ffffff !important;
+  }
 }
 
 @media screen and (max-width: 600px) {

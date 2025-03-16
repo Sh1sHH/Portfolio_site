@@ -198,7 +198,6 @@ const Home: React.FC = () => {
           <div className="column xl-6 lg-6 md-6 folio-entry">
             <div className="folio-entry__content">
               <div className="folio-entry__bg" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/question-mark.png)`,
                 backgroundColor: '#fe4b4b',
                 display: 'flex',
                 justifyContent: 'center',
