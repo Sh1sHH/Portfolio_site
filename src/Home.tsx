@@ -170,11 +170,11 @@ const Home: React.FC = () => {
           <div className="column xl-6 lg-6 md-6 folio-entry">
             <div className="folio-entry__content">
               <div className="folio-entry__bg" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/g-tulips.jpg)`
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/endy.png)`
               }}></div>
-              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/g-tulips.jpg`} className="folio-entry__link glightbox">
+              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/endyfull.png`} className="folio-entry__link glightbox">
                 <div className="folio-entry__text">
-                  <div className="folio-entry__cat">UI Design</div>
+                  <div className="folio-entry__cat">Endy</div>
                   <div className="folio-entry__title">Crypto Projects</div>
                 </div>
                 <div className="folio-entry__counter">02</div>
@@ -184,11 +184,11 @@ const Home: React.FC = () => {
           <div className="column xl-6 lg-6 md-6 folio-entry">
             <div className="folio-entry__content">
               <div className="folio-entry__bg" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/g-tropical.jpg)`
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/coinversation.png)`
               }}></div>
-              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/g-tropical.jpg`} className="folio-entry__link glightbox">
+              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/coinversatiofull.png`} className="folio-entry__link glightbox">
                 <div className="folio-entry__text">
-                  <div className="folio-entry__cat">Product Design</div>
+                  <div className="folio-entry__cat">Coinversation</div>
                   <div className="folio-entry__title">Crypto Projects</div>
                 </div>
                 <div className="folio-entry__counter">03</div>
@@ -198,12 +198,19 @@ const Home: React.FC = () => {
           <div className="column xl-6 lg-6 md-6 folio-entry">
             <div className="folio-entry__content">
               <div className="folio-entry__bg" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/g-woodcraft.jpg)`
-              }}></div>
-              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/g-woodcraft.jpg`} className="folio-entry__link glightbox">
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/question-mark.png)`,
+                backgroundColor: '#fe4b4b',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '102px'
+              }}>
+                <span>?</span>
+              </div>
+              <a href="#0" className="folio-entry__link">
                 <div className="folio-entry__text">
-                  <div className="folio-entry__cat">Whats Next</div>
-                  <div className="folio-entry__title">?</div>
+                  <div className="folio-entry__cat">What's Next?</div>
+                  <div className="folio-entry__title">Your Project Here</div>
                 </div>
                 <div className="folio-entry__counter">04</div>
               </a>
