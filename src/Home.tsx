@@ -156,9 +156,9 @@ const Home: React.FC = () => {
           <div className="column xl-6 lg-6 md-6 folio-entry">
             <div className="folio-entry__content">
               <div className="folio-entry__bg" style={{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/g-lamp.jpg)`
+                backgroundImage: `url(${process.env.PUBLIC_URL}/images/folio/gallery/arafat.png)`
               }}></div>
-              <a href={`${process.env.PUBLIC_URL}/images/folio/gallery/g-lamp.jpg`} className="folio-entry__link glightbox">
+              <a href="https://arafatkofte.com" className="folio-entry__link" target="_blank" rel="noopener noreferrer">
                 <div className="folio-entry__text">
                   <div className="folio-entry__cat">Arafat Köfte</div>
                   <div className="folio-entry__title">Business Websites</div>
