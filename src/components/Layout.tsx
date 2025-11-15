@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import GLightbox from 'glightbox';
-import usePreloader from '../hooks/usePreloader.ts';
-import useHeader from '../hooks/useHeader.ts';
-import useMobileMenu from '../hooks/useMobileMenu.ts';
-import useScrollSpy from '../hooks/useScrollSpy.ts';
-import useBackToTop from '../hooks/useBackToTop.ts';
-import useMoveTo from '../hooks/useMoveTo.ts';
-import useSmoothScroll from '../hooks/useSmoothScroll.ts';
+import usePreloader from '../hooks/usePreloader';
+import useHeader from '../hooks/useHeader';
+import useMobileMenu from '../hooks/useMobileMenu';
+import useScrollSpy from '../hooks/useScrollSpy';
+import useBackToTop from '../hooks/useBackToTop';
+import useMoveTo from '../hooks/useMoveTo';
+import useSmoothScroll from '../hooks/useSmoothScroll';
 
 interface LayoutProps {
   children: React.ReactNode;

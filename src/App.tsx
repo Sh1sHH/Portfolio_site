@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout.tsx';
-import Home from './Home.tsx';
+import Layout from './components/Layout';
+import Home from './Home';
 
 // CSS dosyalarını import et
 import './css/vendor.css';
