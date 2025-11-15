@@ -7,6 +7,7 @@ import Home from './Home';
 import './css/vendor.css';
 import './css/styles.css';
 import './css/custom.css'; // Özel CSS dosyası
+import 'glightbox/dist/css/glightbox.min.css'; // GLightbox CSS
 
 const App: React.FC = () => {
   return (

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import GLightbox from 'glightbox';
 import usePreloader from '../hooks/usePreloader';
 import useHeader from '../hooks/useHeader';
 import useMobileMenu from '../hooks/useMobileMenu';
@@ -52,30 +51,36 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     }
   }, [activeSection]);
 
-  // Initialize GLightbox
+  // Initialize GLightbox with dynamic import
   useEffect(() => {
-    let lightbox: any;
+    let lightbox: any = null;
     
-    try {
-      lightbox = GLightbox({
-        selector: '.glightbox',
-        zoomable: false,
-        touchNavigation: true,
-        loop: false,
-        autoplayVideos: true,
-        svg: {
-          close: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>',
-          prev: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
-          next: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 6L12 7.41 17.17 12l-5.17 5.17L10.59 18l6-6z"/></svg>'
-        }
-      });
-    } catch (error) {
-      console.error('GLightbox initialization error:', error);
-    }
+    const initGLightbox = async () => {
+      try {
+        // @ts-ignore - Dynamic import for GLightbox
+        const GLightbox = (await import('glightbox')).default;
+        
+        lightbox = GLightbox({
+          selector: '.glightbox',
+          zoomable: false,
+          touchNavigation: true,
+          loop: false,
+          autoplayVideos: true
+        });
+      } catch (error) {
+        console.error('GLightbox initialization error:', error);
+      }
+    };
+
+    initGLightbox();
 
     return () => {
       if (lightbox && typeof lightbox.destroy === 'function') {
-        lightbox.destroy();
+        try {
+          lightbox.destroy();
+        } catch (e) {
+          console.error('GLightbox destroy error:', e);
+        }
       }
     };
   }, []);
