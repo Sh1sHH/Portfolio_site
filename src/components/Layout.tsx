@@ -60,7 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         // @ts-ignore - Dynamic import for GLightbox
         const GLightbox = (await import('glightbox')).default;
         
-        lightbox = GLightbox({
+        lightbox = new GLightbox({
           selector: '.glightbox',
           zoomable: false,
           touchNavigation: true,
