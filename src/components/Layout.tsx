@@ -54,21 +54,27 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Initialize GLightbox
   useEffect(() => {
-    const lightbox = GLightbox({
-      selector: '.glightbox',
-      zoomable: false,
-      touchNavigation: true,
-      loop: false,
-      autoplayVideos: true,
-      svg: {
-        close: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>',
-        prev: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
-        next: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 6L12 7.41 17.17 12l-5.17 5.17L10.59 18l6-6z"/></svg>'
-      }
-    });
+    let lightbox: any;
+    
+    try {
+      lightbox = GLightbox({
+        selector: '.glightbox',
+        zoomable: false,
+        touchNavigation: true,
+        loop: false,
+        autoplayVideos: true,
+        svg: {
+          close: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>',
+          prev: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
+          next: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 6L12 7.41 17.17 12l-5.17 5.17L10.59 18l6-6z"/></svg>'
+        }
+      });
+    } catch (error) {
+      console.error('GLightbox initialization error:', error);
+    }
 
     return () => {
-      if (lightbox) {
+      if (lightbox && typeof lightbox.destroy === 'function') {
         lightbox.destroy();
       }
     };
